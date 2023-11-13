@@ -19,10 +19,21 @@ var f = new Uint8Array(eval(process.argv[3]))
     , v = f.subarray(48, 64);
 
 
-f = a(o(g), h(apkId.substring(0, 5) + apkId.substring(37)), {
+// f = a(o(g), h(apkId.substring(0, 5) + apkId.substring(37)), {
+//     mode: u,
+//     padding: c
+// })
+
+// f = a(o(g), h(apkId.substring(0, 16) + apkId.substring(48)), {
+//     mode: u,
+//     padding: c
+// })
+
+
+f = a(o(g), h(apkId.substring(32)), {
     mode: u,
     padding: c
-})
+}),
 
 f = convert(a(o(v), f, {
     mode: u,
