@@ -1,6 +1,6 @@
-# Graphytti
+# graphyti
 
-Graphytti is a proof-of-concept tool demonstrating the bypass of the Graphy E-Learning Platform's Digital Rights Management (DRM) system, enabling unauthorised download of course material.
+graphyti is a proof-of-concept tool demonstrating the bypass of the Graphy E-Learning Platform's Digital Rights Management (DRM) system, enabling unauthorised download of course material.
 
 ### Dependencies
 - Python3.x
