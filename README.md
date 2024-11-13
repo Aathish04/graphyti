@@ -13,8 +13,9 @@ Graphytti is a proof-of-concept tool demonstrating the bypass of the Graphy E-Le
 ### Overview
 
 This vulnerability exists due to Graphy sharing the AES decryption key required to decrypt the protected media content with the client over the internet.
+The key itself is encrypted using AES and decrypted client-side before the video files are decrypted.
 
-Evident efforts were taken to obfuscate the process of decryption - however, these efforts can be circumvented by treating the obfuscated code as a black-box through which "arbitrary" data enters, and a media decryption key leaves.
+Evident efforts were taken to obfuscate the process of key decryption - however, these efforts can be circumvented by treating the obfuscated code as a black-box through which "arbitrary" data enters, and a media decryption key leaves.
 
 ### Proof-of-Concept : Downloading Course Material on a self-published course.
 1) In the `Main.py` file, replace the existing `SESSIONID` with your Graphy SessionID.
