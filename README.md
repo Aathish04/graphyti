@@ -17,6 +17,8 @@ This vulnerability exists because the AES decryption key used to unlock protecte
 Efforts to obfuscate the key-decryption process can be bypassed by treating the obfuscated code as a "black box" where the decryption key can be extracted.
 
 ### Proof-of-Concept : Downloading Course Material on a self-published course.
+0) Ensure all dependencies are satisfied by running `npm install` and `python3 -m pip install requirements.txt`.
+
 1) In the `Main.py` file, replace the existing `SESSIONID` with your Graphy SessionID.
 
 2) Update `FFMPEG_BIN` to the path of your FFMPEG installation.
