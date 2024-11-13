@@ -12,17 +12,16 @@ Graphytti is a proof-of-concept tool demonstrating the bypass of the Graphy E-Le
 
 ### Overview
 
-This vulnerability exists due to Graphy sharing the AES decryption key required to decrypt the protected media content with the client over the internet.
-The key itself is encrypted using AES and decrypted client-side before the video files are decrypted.
+This vulnerability exists because the AES decryption key used to unlock protected media content is shared with the client over the internet. Although the key itself is encrypted using AES, it is decrypted client-side, allowing eventual access to the raw video files.
 
-Evident efforts were taken to obfuscate the process of key decryption - however, these efforts can be circumvented by treating the obfuscated code as a black-box through which "arbitrary" data enters, and a media decryption key leaves.
+Efforts to obfuscate the key-decryption process can be bypassed by treating the obfuscated code as a "black box" where the decryption key can be extracted.
 
 ### Proof-of-Concept : Downloading Course Material on a self-published course.
 1) In the `Main.py` file, replace the existing `SESSIONID` with your Graphy SessionID.
 
-2) Replace existing `FFMPEG_BIN` with the path to your installation of the FFMPEG tool.
+2) Update `FFMPEG_BIN` to the path of your FFMPEG installation.
 
-3) Replace existing `URL` with the URL of the course you wish to test.
+3) Replace the placeholder `URL` with the URL of the course-owner to test.
 
 4) Replace the existing `SELECTED_COURSE_ID` with the ID of the course you wish to test. The Course ID may be obtained from the URL of the course being tested.
 
@@ -32,8 +31,10 @@ The Video Files present in the course will be found at `./media/processed/<Name 
 
 ### Mitigation Strategies
 Possible Strategies include:
-- Usage of tried and tested DRM mechanisms purpose built for specific platforms, such as Google Widevine for Android/Chrome, Microsoft Playready for Windows, and Apple FairPlay for iOS and MacOS devices.
-- Addition of a rate limit to remove the ability to download course material at a faster rate is humanly possible to consume said course material.
+- Using established DRM mechanisms that are designed for specific platforms, such as Google Widevine (Android/Chrome), Microsoft PlayReady (Windows), and Apple FairPlay (iOS/macOS).
+- Implementing rate limiting to prevent bulk downloads that exceed normal human consumption rates.
 
 # Responsible Disclosure
 The findings have been timely reported to all concerned parties via email along with a video Proof-of-Concept.
+
+This Proof-of-Concept is STRICTLY for informational purposes. The author does NOT support, encourage or condone Piracy in any way, shape or form. The author is NOT responsible for any actions performed with the tool.
